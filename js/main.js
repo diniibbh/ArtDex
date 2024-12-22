@@ -184,3 +184,31 @@ function initSmoothScrolling(container, logoAnimation) {
 		$(this).addClass(cl);
 	});
 }
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+	const rect = element.getBoundingClientRect();
+	return (
+	  rect.top >= 0 &&
+	  rect.left >= 0 &&
+	  rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+	  rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+	);
+  }
+  
+  // Function to animate the progress bars
+  function animateProgressBars() {
+	const progressBars = document.querySelectorAll('.progress-bar');
+	progressBars.forEach(bar => {
+	  if (isInViewport(bar)) {
+		const percentage = bar.getAttribute('data-percentage');
+		bar.style.width = percentage + '%';
+	  }
+	});
+  }
+  
+  // Add a scroll event listener to animate bars when they come into view
+  window.addEventListener('scroll', animateProgressBars);
+  
+  // Trigger animation when the page is loaded
+  window.addEventListener('load', animateProgressBars);
+  
