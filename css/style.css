@@ -1277,3 +1277,24 @@ footer .credits a {
   background-position: center;
   background-repeat: no-repeat;
 }
+.skill-mf .progress {
+  height: 100%;
+  background-color: #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.skill-mf .progress-bar {
+  height: 100%;
+  background-color: #3498db;
+  width: 0;
+  transition: width 3s ease;
+}
+
+.pull-right {
+  float: right;
+}
+
+.rounded-5 {
+  border-radius: 5px;
+}
+
